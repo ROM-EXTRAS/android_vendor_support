@@ -86,7 +86,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         if (mDefaultValue > mMax) {
             mDefaultValue = mMax;
         }
-        mUnits = getAttributeStringValue(attrs, SETTINGS_NS, "units", "");
+        mUnits = getAttributeStringValue(attrs, null, "units", "");
 
         Integer id = a.getResourceId(R.styleable.CustomSeekBarPreference_units, 0);
         if (id > 0) {
@@ -94,7 +94,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         }
 
         try {
-            String newInterval = attrs.getAttributeValue(SETTINGS_NS, "interval");
+            String newInterval = attrs.getAttributeValue(null, "interval");
             if (newInterval != null)
                 mInterval = Integer.parseInt(newInterval);
         } catch (Exception e) {
